@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0; /* Mengatur margin body ke 0 */
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    padding: 0px 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+  background-color: #fff;
+  /* box-shadow: 10px 10px 140px 50px rgba(0, 0, 0, 1); Bayangan dengan offset 10px dan tingkat penyebaran 10px */
+  position: absolute; /* Diperlukan untuk menggeser elemen dari posisi normalnya */
+  transition: box-shadow: 0,5s;
+  z-index: 1;
+}
+
+/* Tambahkan shadow ke navbar */
+.navbar-scrolled {
+  box-shadow: none; /* Hilangkan shadow */
+}
+
+
+section.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("gambar/makanan1.jpeg");
+    filter: brightness(90%);
+    background-repeat: no-repeat; /* Menyatakan bahwa gambar latar tidak boleh diulang */
+    background-size: cover; /* Mengisi seluruh elemen .cc dengan gambar */
+    background-position: center;
+    z-index: -1;
+  }
+
+section.main{
+    position: relative;
+    text-align: center; /* Pusatkan teks */
+    height: 92vh;   
+    }
+
+footer i{
+    color: white;
+}
