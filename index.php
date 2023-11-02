@@ -14,13 +14,13 @@
     integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>AyoMakan</title>
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 
 <body>
   <nav class="navbar sticky-top navbar-expand-lg bg-body-white">
     <div class="container-fluid">
-      <a class="navbar-brand ms-4" href="#"><img src="gambar/AyoMakan.png" alt="" style="width: 120px;"></a>
+      <a class="navbar-brand ms-4" href="#"><img src="assets/Assets/AyoMakan.png" alt="" style="width: 120px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,7 @@
     <div class="row justify-content-center">
       <div class="col">
         <div class="card h-100 border-0 w-75 mx-auto">
-          <img src="gambar/about1.png" class="card-img-top" alt="">
+          <img src="assets/Assets/about1.png" class="card-img-top" alt="">
           <div class="card-body text-center">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -80,7 +80,7 @@
       </div>
       <div class="col">
         <div class="card h-100 border-0 w-75 mx-auto">
-          <img src="gambar/about2.png" class="card-img-top" alt="">
+          <img src="assets/Assets/about2.png" class="card-img-top" alt="">
           <div class="card-body text-center">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -89,7 +89,7 @@
       </div>
       <div class="col">
         <div class="card h-100 border-0 w-75 mx-auto">
-          <img src="gambar/about3.png" class="card-img-top" alt="">
+          <img src="assets/Assets/about3.png" class="card-img-top" alt="">
           <div class="card-body text-center">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -105,31 +105,31 @@
     <div class="list-produk container-fluid my-5">
       <ul class="d-flex justify-content-center mx-auto">
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
         <li class="m-1">
-          <img src="gambar/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
+          <img src="assets/Assets/bakso1.jpeg" alt="" class="rounded-circle" height="140px" width="140px">
           <p class="fs-5 fw-semibold text-center">bakso</p>
         </li>
       </ul>
@@ -142,32 +142,32 @@
     <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 0px 80px;">
       <div class="col">
         <div class="card h-100">
-          <img src="gambar/bakso1.jpeg" class="card-img-top" alt="gambar/bakso1.jpeg" width="200" height="300">
+          <img src="assets/Assets/bakso1.jpeg" class="card-img-top" alt="assets/Assets/bakso1.jpeg" width="200" height="300">
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="gambar/bakso1.jpeg" class="card-img-top" alt="gambar/bakso1.jpeg" width="200" height="300">
+          <img src="assets/Assets/bakso1.jpeg" class="card-img-top" alt="assets/Assets/bakso1.jpeg" width="200" height="300">
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="gambar/bakso1.jpeg" class="card-img-top" alt="gambar/bakso1.jpeg" width="200" height="300">
+          <img src="assets/Assets/bakso1.jpeg" class="card-img-top" alt="assets/Assets/bakso1.jpeg" width="200" height="300">
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="gambar/bakso1.jpeg" class="card-img-top" alt="gambar/bakso1.jpeg" width="200" height="300">
+          <img src="assets/Assets/bakso1.jpeg" class="card-img-top" alt="assets/Assets/bakso1.jpeg" width="200" height="300">
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="gambar/bakso1.jpeg" class="card-img-top" alt="gambar/bakso1.jpeg" width="200" height="300">
+          <img src="assets/Assets/bakso1.jpeg" class="card-img-top" alt="assets/Assets/bakso1.jpeg" width="200" height="300">
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="gambar/bakso1.jpeg" class="card-img-top" alt="gambar/bakso1.jpeg" width="200" height="300">
+          <img src="assets/Assets/bakso1.jpeg" class="card-img-top" alt="assets/Assets/bakso1.jpeg" width="200" height="300">
         </div>
       </div>
     </div>
