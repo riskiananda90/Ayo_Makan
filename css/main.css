@@ -9,6 +9,7 @@
 
 body {
     margin: 0; /* Mengatur margin body ke 0 */
+    padding-bottom: 70px;
 }
 
 ul{
