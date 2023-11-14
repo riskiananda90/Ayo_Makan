@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>AyoMakan</title>
+    <link rel="stylesheet" href="css/pemesanan.css" />
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-white">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="#"><img src="Image/AyoMakan.png" alt="" style="width: 120px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" href="" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Rekomendasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <form class="d-flex my-lg-0">
+                            <input class="form-control  me-sm-2" type="text" placeholder="Search" style="width: 350px;">
+                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><i
+                                    class="fas fa-search"></i></button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger my-sm-0" href="login.html" style="width: 100px;">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-danger my-sm-0" href="daftar.html" style="width: 100px;">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#shop"><i class="fas fa-shopping-cart "
+                                style="height: 30px; width: 30px; color: #dc4535;"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="d-flex me-5 mt-5">
+                    <div class="flex-grow-1">
+                        <h2 class="fw-bolder">
+                            Nasi Lemak KFC
+                        </h2>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="rekomendasi d-flex align-items-center text-bg-danger rounded-pill">
+                                <i class="fa fa-thumbs-up" aria-hidden="true" style="height: 20px;"></i>
+                                <p class="m-0 ms-3">Rekomendasi</p>
+                            </div>
+                            <p class="m-0 ms-3 fs-6 fw-medium">Nasi lemak</p>
+                        </div>
+                        <div class="open d-flex align-items-center bg-opacity-75 rounded-pill mt-3">
+                            <i class="fa fa-circle icon" aria-hidden="true"></i>
+                            <p class="m-0 ms-3 fs-6 text-black opacity-100">Open</p>
+                        </div>
+                    </div>
+                    <div class="w-50">
+                        <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-thumbnail rounded-5 ">
+                    </div>
+                </div>
+
+                <div class="">
+                    <ul class="list-group list-group-horizontal my-5">
+                        <li class="item list-group-item d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-star text-warning" aria-hidden="true" style="height: 20px;"></i>
+                                <p class="m-0 ms-2">2.6</p>
+                            </div>
+                            <p class="m-0 fw-lighter text-body-tertiary mt-2 ">1k+ Ratings</p>
+                        </li>
+                        <li class="item list-group-item d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-location-dot text-danger" aria-hidden="true"
+                                    style="height: 20px;"></i>
+                                <p class="m-0 ms-2">0.22 km</p>
+                            </div>
+                            <p class="m-0 fw-lighter text-body-tertiary mt-2 ">Distance</p>
+                        </li>
+                        <li class="item list-group-item d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-dollar-sign mx-1 " aria-hidden="true" style="height: 20px;"></i>
+                                <i class="fa-solid fa-dollar-sign mx-1 " aria-hidden="true" style="height: 20px;"></i>
+                                <i class="fa-solid fa-dollar-sign mx-1 opacity-50 " aria-hidden="true"
+                                    style="height: 20px;"></i>
+                                <i class="fa-solid fa-dollar-sign mx-1 opacity-50 " aria-hidden="true"
+                                    style="height: 20px;"></i>
+                            </div>
+                            <p class="m-0 fw-lighter text-body-tertiary mt-2 ">36k - 44k</p>
+                        </li>
+                        <li class="item list-group-item d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-thumbs-up text-danger" aria-hidden="true"
+                                    style="height: 20px;"></i>
+                                <p class="m-0 ms-2">10+ ratings</p>
+                            </div>
+                            <p class="m-0 fw-lighter text-body-tertiary mt-2 ">Great taste</p>
+                        </li>
+                        <li class="item list-group-item d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-drumstick-bite text-danger" aria-hidden="true"
+                                    style="height: 20px;"></i>
+                                <p class="m-0 ms-2">5+ ratings</p>
+                            </div>
+                            <p class="m-0 fw-lighter text-body-tertiary mt-2 ">Fair portion</p>
+                        </li>
+                        <li class="item list-group-item d-flex flex-column align-items-center justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-wallet text-danger" aria-hidden="true" style="height: 20px;"></i>
+                                <p class="m-0 ms-2">5+ ratings</p>
+                            </div>
+                            <p class="m-0 fw-lighter text-body-tertiary mt-2 ">Value for money</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-flex justify-content-center ">
+                    <a class="btn btn-danger me-2" href="#">menu</a>
+                    <a class="btn btn-outline-danger ms-2" href="#" tabindex="-1" aria-disabled="true">Review</a>
+                </div>
+
+                <section class="mt-5 me-5">
+                    <h1 class="fs-2 fw-bold">Kategori</h1>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="fs-2 fw-bold">Kategori</h1>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="fs-2 fw-bold">Kategori</h1>
+                    <div class="row my-4">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-fluid">
+                                    <h2 class="card-text fs-6 fw-bold m-2">Nasi lemak KFC</h2>
+                                    <h3 class="card-text fs-6 fw-semibold m-2 ">Rp 40.000</h3>
+                                    <div class="d-flex justify-content-center my-3 ">
+                                        <button type="submit" class="btn btn-outline-danger">add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="col-md-3 bg-white position-fixed">
+                <div class="container mt-5 text-center">
+                    <h1 class="fs-5 fw-bold ">Lorem, ipsum.</h1>
+                    <h2 class="fs-6 fw-semibold text-black-50 my-3">Lorem ipsum dolor sit.</h2>
+                    <div class="form-check form-switch text-start d-flex align-items-center p-0 my-3">
+                        <i class="fa-solid fa-utensils fs-5 text-danger me-3"></i>
+                        <label class="form-check-label fs-6 flex-grow-1" for="flexSwitchCheckChecked">Alat Makan</label>
+                        <input class="form-check-input fs-4 m-0" type="checkbox" role="switch"
+                            id="flexSwitchCheckChecked" checked>
+                    </div>
+                    <p class="text-start text-black-50 ">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Explicabo, cum?</p>
+                </div>
+                <hr>
+                <div class="container">
+                    <div class="d-flex justify-content-between">
+                        <p>Subtotal</p>
+                        <p>Rp 46.000</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>Ongkos Kirim</p>
+                        <p>Rp 46.000</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>biaya pemesanan</p>
+                        <p>Rp 46.000</p>
+                    </div>
+                </div>
+                <div class="container position-absolute bottom-0 w-100">
+                    <div class="d-flex justify-content-between">
+                        <p>Total Harga</p>
+                        <p>Rp 46.000</p>
+                    </div>
+                    <a href="#"><button class="btn btn-danger w-100" type="submit">Bayar</button></a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="text-center text-lg-start bg-dark text-white mt-5">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+
+            <div>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <img src="gambar/AyoMakan.png" alt="">
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">lorem</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3 text-secondary"></i>Lorem, ipsum.</p>
+                        <p>
+                            <i class="fas fa-envelope me-3 text-secondary"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3 text-secondary"></i> 12 34 56 78 90</p>
+                        <p><i class="fas fa-print me-3 text-secondary"></i> 12 34 56 78 90</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+            <p class="text-reset fw-bold">AyoMakan</p>
+        </div>
+    </footer>
+</body>
+
+</html>
