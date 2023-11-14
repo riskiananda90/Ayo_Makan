@@ -25,11 +25,11 @@ a{
 }
 
 nav{
-  background-color: #fff;
-  /* box-shadow: 10px 10px 140px 50px rgba(0, 0, 0, 1); Bayangan dengan offset 10px dan tingkat penyebaran 10px */
-  position: absolute; /* Diperlukan untuk menggeser elemen dari posisi normalnya */
-  transition: box-shadow 0,5s;
-  z-index: 1;
+    background-color: #fff;
+    position: absolute;
+    transition: box-shadow 0, 5s;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Tambahkan shadow ke navbar */
@@ -45,7 +45,7 @@ section.main::before {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url("assets/Assets/makanan1.jpeg");
+    background-image: url("/image/makanan1.jpeg");
     filter: brightness(90%);
     background-repeat: no-repeat; /* Menyatakan bahwa gambar latar tidak boleh diulang */
     background-size: cover; /* Mengisi seluruh elemen .cc dengan gambar */
