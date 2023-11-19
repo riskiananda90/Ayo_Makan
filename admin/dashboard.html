@@ -1,331 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>AyoMakan</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
-    <!doctype html>
-    <html lang="en">
+    <div class="sidebar position-fixed h-100 z-3 ">
+        <div class="logo-details w-100 d-flex align-items-center">
+            <i class="fa fa-solid fa-bowl-rice text-white text-center icon"></i>
+            <span class="logo-name text-white">AyoMakan</span>
+        </div>
+        <ul class="navbar-nav h-100 pt-2">
+            <li class="item nav-item my-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="#" class="nav-link d-flex align-items-center ">
+                        <i class="fa-solid fa-border-all icon"></i>
+                        <span class="fs-6 fw-normal text-white ">Dashboard</span>
+                    </a>
+                    <i class='fa-solid fa-caret-down icon arrow '></i>
+                </div>
+                <ul class="sub-menu navbar-nav">
+                    <li><a href="#" class="link-head nav-link text-white">Dashboard</a></li>
+                    <li><a href="#" class="nav-link text-white">Halaman Utama</a></li>
+                </ul>
+            </li>
+            <li class="item nav-item my-2">
+                <div class="d-flex justify-content-between align-items-center item">
+                    <a href="#" class="nav-link d-flex align-items-center ">
+                        <i class="fa-solid fa-users icon"></i>
+                        <span class="fs-6 fw-normal text-white ">Users</span>
+                    </a>
+                    <i class='fa-solid fa-caret-down icon arrow'></i>
+                </div>
+                <ul class="sub-menu navbar-nav">
+                    <li><a href="#" class="link-head nav-link text-white">Users</a></li>
+                    <li><a href="#" class="nav-link text-white">Semua Users</a></li>
+                    <li><a href="#" class="nav-link text-white">Tambahkan Users</a></li>
+                </ul>
+            </li>
+            <li class="item nav-item my-2 ">
+                <div class="d-flex justify-content-between align-items-center item">
+                    <a href="#" class="nav-link d-flex align-items-center ">
+                        <i class="fa-solid fa-shop icon"></i>
+                        <span class="fs-6 fw-normal text-white ">Toko</span>
+                    </a>
+                    <i class='fa-solid fa-caret-down icon arrow'></i>
+                </div>
+                <ul class="sub-menu navbar-nav">
+                    <li><a href="#" class="link-head nav-link text-white">Toko</a></li>
+                    <li><a href="#" class="nav-link text-white">Semua Toko</a></li>
+                    <li><a href="#" class="nav-link text-white">Tambahkan Toko</a></li>
+                    <li><a href="#" class="nav-link text-white">Tambahkan Kategori</a></li>
+                </ul>
+            </li>
+            <li class="item nav-item my-2">
+                <div class="d-flex justify-content-between align-items-center item">
+                    <a href="#" class="nav-link d-flex align-items-center ">
+                        <i class="fa-solid fa-utensils icon"></i>
+                        <span class="fs-6 fw-normal text-white ">Menu</span>
+                    </a>
+                    <i class='fa-solid fa-caret-down icon arrow'></i>
+                </div>
+                <ul class="sub-menu navbar-nav">
+                    <li><a href="#" class="link-head nav-link text-white">Menu</a></li>
+                    <li><a href="#" class="nav-link text-white">Semua Menu</a></li>
+                    <li><a href="#" class="nav-link text-white">Tambahkan Menu</a></li>
+                </ul>
+            </li>
+            <li class="item nav-item my-2">
+                <div class="d-flex justify-content-between align-items-center item">
+                    <a href="#" class="nav-link d-flex align-items-center ">
+                        <i class="fa-solid fa-cart-shopping icon"></i>
+                        <span class="fs-6 fw-normal text-white ">Orders</span>
+                    </a>
+                    <i class='fa-solid fa-caret-down icon arrow'></i>
+                </div>
+                <ul class="sub-menu navbar-nav">
+                    <li><a href="#" class="link-head nav-link text-white">Orders</a></li>
+                    <li><a href="#" class="nav-link text-white">Semua Order</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Hugo 0.72.0">
-        <title>AyoMakan</title>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <!-- FontAwesome 6.2.0 CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- (Optional) Use CSS or JS implementation -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
-            integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <link rel="stylesheet" href="css/dashboard.css">
-    </head>
-
-    <body>
-        <nav class="navbar sticky-top navbar-expand-lg bg-body-white w-100">
-            <div class="container-fluid">
-                <a class="navbar-brand ms-4" href="#"><img src="Image/AyoMakan.png" alt="" style="width: 120px;"></a>
-                <button class="btn btn-outline-danger ms-auto " type="button" data-bs-toggle="offcanvas"
+    <nav class="navbar navbar-expand-sm position-relative z-3">
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+            aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto p-0 mt-lg-0">
+                <li class="nav-item icon-bar">
+                    <i class="fa-solid fa-bars icon"></i>
+                </li>
+            </ul>
+            <form action="" class="d-flex justify-content-center w-75">
+                <input type="search" class="form-control" id="search" placeholder="Search">
+                <button class="btn btn-outline-danger ms-3 me-5 " type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <i class="fas fa-search"></i> Search
+                    <i class="fas fa-search"></i> <span></span>
                 </button>
-                <div class="btn-group ms-4">
-                    <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown"
-                        data-bs-display="static" aria-expanded="false">
-                        <i class="fa-regular fa-circle-user btn-outline-danger"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    </ul>
+            </form>
+            <div class="btn-group mx-4">
+                <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown"
+                    data-bs-display="static" aria-expanded="false">
+                    <i class="fa-regular fa-circle-user btn-outline-danger"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="navbar navbar-expand-sm position-relative">
+        <h1 class="fs-3 ms-4 ">Dashboard</h1>
+    </header>
+
+    <main class="d-flex position-relative ">
+        <div class="box card my-5 bg-primary ">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <i class="fa-solid fa-users text-light icon"></i>
+                <div class="d-flex flex-column justify-content-end align-items-end">
+                    <h2 class="card-title m-0 text-light">8</h2>
+                    <p class="card-text fs-4 m-0 text-light ">User</p>
                 </div>
             </div>
-        </nav>
-
-        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Search</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <!-- Add a form for search -->
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-danger" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
+            <div class="card-footer d-flex justify-content-between bg-light">
+                <small class="text-body-secondary">View Details</small>
+                <a href="#" class="text-primary"><i class="fa-solid fa-right-to-bracket"></i></a>
             </div>
         </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse position-absolute z-3 ">
-                    <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
-                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                                <span>Home</span>
-                                <a class="link-secondary" href="#" aria-label="Add a new report">
-                                  <span data-feather="plus-circle"></span>
-                                </a>
-                              </h6>
-                              <ul class="nav flex-column">
-                                <li class="nav-item d-flex align-items-center">
-                                  <button class="nav-link" aria-current="page" href="#">
-                                    <span data-feather="home"></span>
-                                    <i class="fa-solid fa-gauge fs-6 me-2"></i>
-                                    <span class="fs-6">Dashboard</span>
-                                  </button>
-                                </li>
-                                <!-- Dropdown Example -->
-                                <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span data-feather="layers"></span>
-                                    <i class="fa-solid fa-gauge fs-6 me-2"></i>
-                                    <span class="fs-6">Dashboard Dropdown</span>
-                                  </a>
-                                  <div class="dropdown-menu" aria-labelledby="dashboardDropdown">
-                                    <a class="dropdown-item" href="#">Submenu 1</a>
-                                    <a class="dropdown-item" href="#">Submenu 2</a>
-                                    <a class="dropdown-item" href="#">Submenu 3</a>
-                                  </div>
-                                </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file"></span>
-                                    Orders
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="shopping-cart"></span>
-                                    Products
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="users"></span>
-                                    Customers
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="bar-chart-2"></span>
-                                    Reports
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="layers"></span>
-                                    Integrations
-                                </a>
-                            </li>
-                        </ul>
-
-                        <h6
-                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                            <span>Saved reports</span>
-                            <a class="link-secondary" href="#" aria-label="Add a new report">
-                                <span data-feather="plus-circle"></span>
-                            </a>
-                        </h6>
-                        <ul class="nav flex-column mb-2">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Current month
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Last quarter
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Social engagement
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Year-end sale
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                    <div
-                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <div class="btn-group mr-2">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                            </div>
-                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                <span data-feather="calendar"></span>
-                                This week
-                            </button>
-                        </div>
-                    </div>
-
-                    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-                    <h2>Section title</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1,001</td>
-                                    <td>Lorem</td>
-                                    <td>ipsum</td>
-                                    <td>dolor</td>
-                                    <td>sit</td>
-                                </tr>
-                                <tr>
-                                    <td>1,002</td>
-                                    <td>amet</td>
-                                    <td>consectetur</td>
-                                    <td>adipiscing</td>
-                                    <td>elit</td>
-                                </tr>
-                                <tr>
-                                    <td>1,003</td>
-                                    <td>Integer</td>
-                                    <td>nec</td>
-                                    <td>odio</td>
-                                    <td>Praesent</td>
-                                </tr>
-                                <tr>
-                                    <td>1,003</td>
-                                    <td>libero</td>
-                                    <td>Sed</td>
-                                    <td>cursus</td>
-                                    <td>ante</td>
-                                </tr>
-                                <tr>
-                                    <td>1,004</td>
-                                    <td>dapibus</td>
-                                    <td>diam</td>
-                                    <td>Sed</td>
-                                    <td>nisi</td>
-                                </tr>
-                                <tr>
-                                    <td>1,005</td>
-                                    <td>Nulla</td>
-                                    <td>quis</td>
-                                    <td>sem</td>
-                                    <td>at</td>
-                                </tr>
-                                <tr>
-                                    <td>1,006</td>
-                                    <td>nibh</td>
-                                    <td>elementum</td>
-                                    <td>imperdiet</td>
-                                    <td>Duis</td>
-                                </tr>
-                                <tr>
-                                    <td>1,007</td>
-                                    <td>sagittis</td>
-                                    <td>ipsum</td>
-                                    <td>Praesent</td>
-                                    <td>mauris</td>
-                                </tr>
-                                <tr>
-                                    <td>1,008</td>
-                                    <td>Fusce</td>
-                                    <td>nec</td>
-                                    <td>tellus</td>
-                                    <td>sed</td>
-                                </tr>
-                                <tr>
-                                    <td>1,009</td>
-                                    <td>augue</td>
-                                    <td>semper</td>
-                                    <td>porta</td>
-                                    <td>Mauris</td>
-                                </tr>
-                                <tr>
-                                    <td>1,010</td>
-                                    <td>massa</td>
-                                    <td>Vestibulum</td>
-                                    <td>lacinia</td>
-                                    <td>arcu</td>
-                                </tr>
-                                <tr>
-                                    <td>1,011</td>
-                                    <td>eget</td>
-                                    <td>nulla</td>
-                                    <td>Class</td>
-                                    <td>aptent</td>
-                                </tr>
-                                <tr>
-                                    <td>1,012</td>
-                                    <td>taciti</td>
-                                    <td>sociosqu</td>
-                                    <td>ad</td>
-                                    <td>litora</td>
-                                </tr>
-                                <tr>
-                                    <td>1,013</td>
-                                    <td>torquent</td>
-                                    <td>per</td>
-                                    <td>conubia</td>
-                                    <td>nostra</td>
-                                </tr>
-                                <tr>
-                                    <td>1,014</td>
-                                    <td>per</td>
-                                    <td>inceptos</td>
-                                    <td>himenaeos</td>
-                                    <td>Curabitur</td>
-                                </tr>
-                                <tr>
-                                    <td>1,015</td>
-                                    <td>sodales</td>
-                                    <td>ligula</td>
-                                    <td>in</td>
-                                    <td>libero</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </main>
+        <div class="box card my-5 bg-warning">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <i class="fa-solid fa-shop text-light icon"></i>
+                <div class="d-flex flex-column justify-content-end align-items-end">
+                    <h2 class="card-title m-0 text-light ">8</h2>
+                    <p class="card-text fs-4 m-0 text-light ">Toko</p>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light ">
+                <small class="text-body-secondary">View Details</small>
+                <a href="#" class="text-warning"><i class="fa-solid fa-right-to-bracket"></i></a>
             </div>
         </div>
+        <div class="box card my-5 bg-danger ">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <i class="fa-solid fa-utensils text-light icon"></i>
+                <div class="d-flex flex-column justify-content-end align-items-end">
+                    <h2 class="card-title m-0 text-light">8</h2>
+                    <p class="card-text fs-4 m-0 text-light">Menu</p>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light">
+                <small class="text-body-secondary">View Details</small>
+                <a href="#" class="text-danger"><i class="fa-solid fa-right-to-bracket"></i></a>
+            </div>
+        </div>
+        <div class="box card my-5 bg-success">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <i class="fa-solid fa-cart-shopping text-light icon"></i>
+                <div class="d-flex flex-column justify-content-end align-items-end">
+                    <h2 class="card-title m-0 text-light">8</h2>
+                    <p class="card-text fs-4 m-0 text-light">Orders</p>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between bg-light">
+                <small class="text-body-secondary">View Details</small>
+                <a href="#" class="text-success "><i class="fa-solid fa-right-to-bracket"></i></a>
+            </div>
+        </div> 
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
+    <script src="js/dashboard.js"></script>
+</body>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-
-    </body>
-
-    </html>
+</html>

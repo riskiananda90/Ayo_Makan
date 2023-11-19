@@ -137,7 +137,7 @@
   pointer-events: auto;
 }
 
-nav.nav-bar{
+nav, header, main{
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
@@ -152,23 +152,41 @@ nav.nav-bar{
   left: 78px;
 }
 
-.sidebar.close ~ nav.nav-bar {
+.sidebar.close ~ nav, .sidebar.close ~ header, .sidebar.close ~ main{
   left: 78px;
   width: calc(100% - 78px);
 }
 
-nav{
+nav, header{
   background-color: #fff;
   position: absolute;
   transition: box-shadow 0, 5s;
   z-index: 1;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-nav.nav-bar div .icon{
+nav div .icon{
   font-size: 30px;
   height: 30px;
   min-width: 78px;
   line-height: 50px ;
 }
 
+main .box{
+  width: 255px;
+  height: 170px;
+  margin-left: 18px;
+  transition: width 0.5s ease;
+}
+
+.sidebar.close ~ main .box{
+  width: 300px;
+  transition: all 0.5 ease;
+}
+
+main .box .icon{
+  font-size: 30px;
+  height: 60px;
+}
+
+main
