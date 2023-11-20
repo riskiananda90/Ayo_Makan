@@ -42,7 +42,7 @@
 }
 
 .sidebar ul{
-  overflow: visible;
+  overflow-y: auto;
 }
 
 .sidebar ul::-webkit-scrollbar{
