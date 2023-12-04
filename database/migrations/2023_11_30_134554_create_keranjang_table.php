@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('keranjang', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_pesanan')->constrained('pesanan','id')->onUpdate('cascade')->onDelete('cascade
-            ');
+            $table->foreignId('id_pesanan')->constrained('pesanan','id')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_menu')->constrained('menu','id')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('jumlah');
             $table->integer('total_harga');
