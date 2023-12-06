@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('id_kategori')->constrained('kategori','id')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_menu');
             $table->decimal('harga_menu');
+            $table->string('image');
             $table->timestamps();
         });
     }

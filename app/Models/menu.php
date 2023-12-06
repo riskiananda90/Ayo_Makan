@@ -14,6 +14,7 @@ class menu extends Model
         'id_kategori',
         'nama_menu',
         'harga_menu',
+        'image'
     ];
 
     public function restoran(){
