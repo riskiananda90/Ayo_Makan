@@ -33,5 +33,45 @@ class UserController extends Controller
         ]);
 
         return Redirect::route('create_user')->with('success', 'User berhasil dibuat');
-    }  
+    } 
+
+    public function index_user(){
+        $user = User::all();
+        return view('admin/index_user', compact('user'));
+    }
+
+    public function show_user(user $user){
+        return view('admin/show_user', compact('user'));
+    }
+
+    public function edit_user(user $user){
+        return view('admin/edit_user', compact('user'));
+    }
+
+    public function update_user(user $user, Request $request){
+        $request->validate([
+            'nama' => 'required',
+            'email' => 'required',
+            // 'alamat' => 'required',
+            // 'no_telp' => 'required',
+            // 'role' => 'required',
+            'password' => 'required|min:8'
+        ]);
+
+        $user->update([
+            'nama' => $request->nama,
+            'email' => $request->email,
+            // 'alamat' => $request->alamat,
+            // 'no_telp' => $request->no_telp,
+            // 'role' => $request->role,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect::route('show_user', $user);
+    }
+
+    public function delete_user(user $user){
+        $user->delete();
+        return redirect::route('index_user');
+    }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users','id')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_restoran')->constrained('restorans','id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_restoran')->constrained('restoran','id')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamp('waktu_pemesanan');
             $table->string('status_pemesanan');
             $table->timestamps();

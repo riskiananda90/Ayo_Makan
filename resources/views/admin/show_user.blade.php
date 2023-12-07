@@ -4,9 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.72.0">
     <title>AyoMakan</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -18,8 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <link rel="stylesheet" href="css/order_admin.css">
+    <link rel="stylesheet" href="{{ asset('build/assets/admin/css/dashboard.css') }}">
 </head>
 
 <body>
@@ -137,121 +133,51 @@
     </header>
 
     <main class="position-relative p-2">
-        <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Order Terdaftar</h5>
-            <div class="d-flex justify-content-between align-items-center mt-4">
-                <div class="d-flex align-items-center">
-                    <p class="text-secondary m-0 me-2">Show</p>
-                    <form action="" class="me-2">
-                        <select class="form-select form-select-sm" aria-label="Small select example">
-                            <option selected>10</option>
-                            <option value="1">25</option>
-                            <option value="2">50</option>
-                            <option value="3">100</option>
-                          </select>
-                    </form>
-                    <p class="text-secondary m-0 ">Entri</p>
-                </div>
-                <form action="">
-                    <div class="d-flex align-items-center ">
-                      <label for="" class="form-label me-3">Search: </label>
-                      <input type="text"
-                        class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+            <section class="m-4 border p-3">
+                <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+                <div class="card-body">
+                    <div class="form-body">
+                        <hr>
+                        <div class="form-group mt-3">
+                            <label class="control-label">Nama</label>
+                            <p class="form-control-static">{{ $user->nama }}</p>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label class="control-label">Email</label>
+                            <p class="form-control-static">{{ $user->email }}</p>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label class="control-label">Alamat</label>
+                            <p class="form-control-static">{{ $user->alamat }}</p>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label class="control-label">Nomor Telepon</label>
+                            <p class="form-control-static">{{ $user->no_telp }}</p>
+                        </div>
+                        <div class="form-group mt-3 ">
+                            <div class="">
+                                <label for="role" class="form-label">Role</label>
+                                <p class="form-control-static">{{ $user->role }}</p>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div>
-                <table class="table border mt-3">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            <th scope="col">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="d-flex justify-content-between align-items-center ">
-                    <p class="text-secondary m-0 ">Showing 1 to 10 of 10 entri</p>
-                    <div class="d-flex align-items-center ">
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Previous</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">1</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">2</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Next</p></a>
+                    <div class="mt-3">
+                        <label for="password" class="form-label">Password</label>
+                        <p class="form-control-static">********</p>
+                    </div>
+                    <div class="form-actions mt-3">
+                        <a href="dashboard.php" class="btn btn-outline-danger ">Back to Dashboard</a>
                     </div>
                 </div>
+            </section>
 
-            </div>
-        </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 
-    <script src="js/dashboard.js"></script>
+    <script src="{{ asset('build/assets/admin/js/dashboard.js') }}"></script>
 </body>
 
 </html>

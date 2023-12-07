@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 class KategoriController extends Controller
 {
     public function create_kategori(){
+        $showKategori = kategori::all();
         return view('admin/create_kategori');
     }
 
@@ -24,4 +25,5 @@ class KategoriController extends Controller
 
         return Redirect::route('create_kategori');
     }  
+
 }

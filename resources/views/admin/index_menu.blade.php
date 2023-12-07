@@ -17,8 +17,8 @@
     <!-- (Optional) Use CSS or JS implementation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-    <link rel="stylesheet" href="css/menu_admin.css">
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="{{ asset('build/assets/admin/css/dashboard.css') }}">
 </head>
 
 <body>
@@ -147,15 +147,15 @@
                             <option value="1">25</option>
                             <option value="2">50</option>
                             <option value="3">100</option>
-                          </select>
+                        </select>
                     </form>
                     <p class="text-secondary m-0 ">Entri</p>
                 </div>
                 <form action="">
                     <div class="d-flex align-items-center ">
-                      <label for="" class="form-label me-3">Search: </label>
-                      <input type="text"
-                        class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                        <label for="" class="form-label me-3">Search: </label>
+                        <input type="text" class="form-control" name="" id=""
+                            aria-describedby="helpId" placeholder="">
                     </div>
                 </form>
             </div>
@@ -163,82 +163,50 @@
                 <table class="table border mt-3">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                            <th scope="col">Aksi</th>
+                            <th scope="col">id</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Harga</th>
+                            <th scope="col">Deskripsi</th>
+                            <th scope="col">Gambar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <a name="" id="" class="btn btn-success" href="#" role="button"><i class="fa-solid fa-pen-to-square me-2 "></i>Edit</a>
-                                <a name="" id="" class="btn btn-danger " href="#" role="button"><i class="fa-solid fa-trash-can me-2"></i></i>Edit</a>
-                            </td>
-                        </tr>
+                        @foreach ($menu as $menu)
+                            <tr>
+                                <th scope="row"> {{ $menu->id }} </th>
+                                <td> {{ $menu->nama_menu }} </td>
+                                <td> {{ $menu->harga_menu }} </td>
+                                <td> {{ $menu->deskripsi }} </td>
+                                <td> <img src="{{ url('storage/' . $menu->image) }}" alt=""> </td>
+                                <td>
+                                    <a name="" id="" class="btn btn-success" href="#"
+                                        role="button">
+                                        <i class="fa-solid fa-pen-to-square me-2"></i>Edit
+                                    </a>
+                                    <a name="" id="" class="btn btn-danger" href="#"
+                                        role="button">
+                                        <i class="fa-solid fa-trash-can me-2"></i>Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-between align-items-center ">
                     <p class="text-secondary m-0 ">Showing 1 to 10 of 10 entri</p>
                     <div class="d-flex align-items-center ">
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Previous</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">1</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">2</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Next</p></a>
+                        <a href="" class="page-link">
+                            <p class="border m-0 p-1 px-3 ">Previous</p>
+                        </a>
+                        <a href="" class="page-link">
+                            <p class="border m-0 p-1 px-3 ">1</p>
+                        </a>
+                        <a href="" class="page-link">
+                            <p class="border m-0 p-1 px-3 ">2</p>
+                        </a>
+                        <a href="" class="page-link">
+                            <p class="border m-0 p-1 px-3 ">Next</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -246,10 +214,10 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 
-    <script src="js/dashboard.js"></script>
+    <script src="{{ asset('build/assets/admin/js/dashboard.js') }}"></script>
 </body>
 
 </html>
