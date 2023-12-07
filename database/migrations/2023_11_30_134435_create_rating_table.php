@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('rating', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_users')->constrained('users','id')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_restoran')->constrained('restoran','id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_restoran')->constrained('restorans','id')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('id_pesanan')->constrained('pesanan','id')->onUpdate('cascade')->onDelete('cascade');
             $table->text('komentar');
             $table->integer('rating');
