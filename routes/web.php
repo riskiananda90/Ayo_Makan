@@ -54,5 +54,10 @@ Route::patch('/user/{user}/update', [UserController::class, 'update_user'])->nam
 Route::delete('/user/{user}', [UserController::class, 'delete_user'])->name('delete_user');
 
 // rute kategori
-Route::get('/kategori/create', [kategoriController::class, 'create_kategori'])->name('create_kategori');
-Route::post('/kategori/create', [kategoriController::class, 'store_kategori'])->name('store_kategori');
+Route::get('/kategori/create', [KategoriController::class, 'create_kategori'])->name('create_kategori');
+Route::post('/kategori/create', [KategoriController::class, 'store_kategori'])->name('store_kategori');
+Route::get('/kategori', [KategoriController::class, 'index_kategori'])->name('index_kategori');
+Route::get('/kategori/{kategori}', [KategoriController::class, 'show_kategori'])->name('show_kategori');
+Route::get('/kategori/{kategori}/edit', [KategoriController::class, 'edit_kategori'])->name('edit_kategori');
+Route::patch('/kategori/{kategori}/update', [KategoriController::class, 'update_kategori'])->name('update_kategori');
+Route::delete('/kategori/{kategori}', [KategoriController::class, 'delete_kategori'])->name('delete_kategori');

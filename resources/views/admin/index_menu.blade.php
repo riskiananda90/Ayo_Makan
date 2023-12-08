@@ -167,7 +167,10 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Harga</th>
                             <th scope="col">Deskripsi</th>
+                            <th scope="col">Kategori</th>
+                            <th scope="col">Restoran</th>
                             <th scope="col">Gambar</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -177,16 +180,22 @@
                                 <td> {{ $menu->nama_menu }} </td>
                                 <td> {{ $menu->harga_menu }} </td>
                                 <td> {{ $menu->deskripsi }} </td>
+                                <td> {{ $menu->kategori->nama_kategori }} </td>
+                                <td> {{ $menu->restoran->nama_restoran }} </td>
                                 <td> <img src="{{ url('storage/' . $menu->image) }}" alt=""> </td>
                                 <td>
-                                    <a name="" id="" class="btn btn-success" href="#"
-                                        role="button">
-                                        <i class="fa-solid fa-pen-to-square me-2"></i>Edit
-                                    </a>
-                                    <a name="" id="" class="btn btn-danger" href="#"
-                                        role="button">
-                                        <i class="fa-solid fa-trash-can me-2"></i>Delete
-                                    </a>
+                                    <form action="{{ route('edit_menu', $menu) }}" method="get">
+                                        <button type="submit" class="btn btn-success" role="button">
+                                            <i class="fa-solid fa-pen-to-square me-2"></i>Edit
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('delete_menu', $menu)}}" method="post">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger" role="button">
+                                            <i class="fa-solid fa-trash-can me-2"></i>Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

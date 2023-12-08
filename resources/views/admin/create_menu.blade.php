@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="{{asset('build/assets/admin/css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/assets/admin/css/dashboard.css') }}">
 </head>
 
 <body>
@@ -136,7 +136,7 @@
         <section class="m-4 border p-3">
             <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
             <div class="card-body">
-                <form action='{{route('store_menu')}}' method='post' enctype="multipart/form-data">
+                <form action='{{ route('store_menu') }}' method='post' enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
                         <hr>
@@ -144,13 +144,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Nama Menu</label>
-                                    <input type="text" name="nama_menu" class="form-control" placeholder="Nasi goreng">
+                                    <input type="text" name="nama_menu" class="form-control"
+                                        placeholder="Nasi goreng">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group has-danger">
                                     <label class="control-label">Deskripsi</label>
-                                    <input type="text" name="Deskripsi" class="form-control form-control-danger"
+                                    <input type="text" name="deskripsi" class="form-control form-control-danger"
                                         placeholder="Deskripsi">
                                 </div>
                             </div>
@@ -159,30 +160,46 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Harga</label>
-                                    <input type="number" name="harga_menu" class="form-control" placeholder="Rp.10000">
+                                    <input type="number" name="harga_menu" class="form-control"
+                                        placeholder="Rp.10000">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group has-danger">
                                     <label class="control-label">Image</label>
-                                    <input type="file" name="image" id="lastName"
+                                    <input type="file" name="image"
                                         class="form-control form-control-danger" placeholder="12n">
                                 </div>
                             </div>
                         </div>
-
                         <div class="row mt-3">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="control-label">Select Category</label>
-                                    <select name="res_name" class="form-control custom-select"
-                                        data-placeholder="Choose a Category" tabindex="1">
-                                        <option>--Pilih Restoran--</option>
+                                    <label class="control-label">Pilih Restoran</label>
+                                    <select name="id_restoran" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
+                                        <option>--Restoran--</option>
+                                        @foreach ($restoran as $resto)
+                                            <option value="{{ $resto->id }}">{{ $resto->nama_restoran }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Pilih Kategori</label>
+                                        <select name="id_kategori" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
+                                            <option>--Kategori--</option>
+                                            @foreach ($kategori as $kat)
+                                                <option value="{{ $kat->id }}">{{ $kat->nama_kategori }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                            </div>
+                        </div>
+                        
+                        
                     <div class="form-actions mt-3">
                         <button type="submit" class="btn btn-danger me-2">Save</button>
                         <a href="dashboard.php" class="btn btn-outline-danger ">Cancel</a>
@@ -193,10 +210,10 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 
-    <script src="{{asset('build/assets/admin/js/dashboard.js')}}"></script>
+    <script src="{{ asset('build/assets/admin/js/dashboard.js') }}"></script>
 </body>
 
 </html>

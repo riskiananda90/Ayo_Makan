@@ -134,87 +134,24 @@
 
     <main class="position-relative p-2">
         <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+            <h5 class="fw-normal text-secondary ">Semua Kategori Terdaftar</h5>
             <div class="card-body">
-                <form action='{{ route('store_kategori') }}' method='post' enctype="multipart/form-data">
+                <form action='{{ route('update_kategori', $kategori, $showKategori) }}' method='post' enctype="multipart/form-data">
+                    @method('PATCH')
                     @csrf
                     <div class="form-body">
                         <hr>
                         <div class="form-group mt-3">
-                            <label class="control-label">Kategori</label>
-                            <input type="text" name="nama_kategori" class="form-control" placeholder="Bakso">
+                            <label class="control-label">Nama Kategori</label>
+                            <input type="text" name="nama_kategori" class="form-control" value="{{$showKategori->nama_kategori}}">
                         </div>
+                    </div>
+
                     <div class="form-actions mt-3">
                         <button type="submit" class="btn btn-danger me-2">Save</button>
                         <a href="dashboard.php" class="btn btn-outline-danger ">Cancel</a>
                     </div>
                 </form>
-            </div>
-        </section>
-
-        <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
-            <div class="d-flex justify-content-between align-items-center mt-4">
-                <div class="d-flex align-items-center">
-                    <p class="text-secondary m-0 me-2">Show</p>
-                    <form action="" class="me-2">
-                        <select class="form-select form-select-sm" aria-label="Small select example">
-                            <option selected>10</option>
-                            <option value="1">25</option>
-                            <option value="2">50</option>
-                            <option value="3">100</option>
-                          </select>
-                    </form>
-                    <p class="text-secondary m-0 ">Entri</p>
-                </div>
-                <form action="">
-                    <div class="d-flex align-items-center ">
-                      <label for="" class="form-label me-3">Search: </label>
-                      <input type="text"
-                        class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                    </div>
-                </form>
-            </div>
-            <div>
-                <table class="table border mt-3">
-                    <thead>
-                        <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Nama Kategori</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($showKategori as $kategori)
-                            <tr>
-                                <th scope="row"> {{ $kategori->id }} </th>
-                                <td> {{ $kategori->nama_kategori }} </td>
-                                <td>
-                                    <form action="{{ route('edit_kategori', $kategori) }}" method="get">
-                                        <button type="submit" class="btn btn-success" role="button">
-                                            <i class="fa-solid fa-pen-to-square me-2"></i>Edit
-                                        </button>
-                                    </form>
-                                    <form action="{{ route('delete_kategori', $kategori)}}" method="post">
-                                        @method('delete')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger" role="button">
-                                            <i class="fa-solid fa-trash-can me-2"></i>Delete
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <div class="d-flex justify-content-between align-items-center ">
-                    <p class="text-secondary m-0 ">Showing 1 to 10 of 10 entri</p>
-                    <div class="d-flex align-items-center ">
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Previous</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">1</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">2</p></a>
-                        <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Next</p></a>
-                    </div>
-                </div>
             </div>
         </section>
     </main>

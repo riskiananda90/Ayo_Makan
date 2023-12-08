@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
     <title>AyoMakan</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -15,7 +18,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
         integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="{{ asset('build/assets/admin/css/dashboard.css') }}">
+
+    <link rel="stylesheet" href="{{asset('build/assets/admin/css/dashboard.css')}}">
 </head>
 
 <body>
@@ -134,26 +138,7 @@
 
     <main class="position-relative p-2">
         <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
-            <div class="card-body">
-                <form action='{{ route('store_kategori') }}' method='post' enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-body">
-                        <hr>
-                        <div class="form-group mt-3">
-                            <label class="control-label">Kategori</label>
-                            <input type="text" name="nama_kategori" class="form-control" placeholder="Bakso">
-                        </div>
-                    <div class="form-actions mt-3">
-                        <button type="submit" class="btn btn-danger me-2">Save</button>
-                        <a href="dashboard.php" class="btn btn-outline-danger ">Cancel</a>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+            <h5 class="fw-normal text-secondary ">Semua Toko Terdaftar</h5>
             <div class="d-flex justify-content-between align-items-center mt-4">
                 <div class="d-flex align-items-center">
                     <p class="text-secondary m-0 me-2">Show</p>
@@ -184,7 +169,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($showKategori as $kategori)
+                        @foreach ($kategori as $kategori)
                             <tr>
                                 <th scope="row"> {{ $kategori->id }} </th>
                                 <td> {{ $kategori->nama_kategori }} </td>
@@ -215,15 +200,16 @@
                         <a href="" class="page-link"><p class="border m-0 p-1 px-3 ">Next</p></a>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
-    <script src="{{ asset('build/assets/admin/js/dashboard.js') }}"></script>
+    <script src="{{asset('build/assets/admin/js/dashboard.js')}}"></script>
 </body>
 
 </html>
