@@ -1,9 +1,9 @@
 @extends('layouts.partials.nav-sidebar-admin')
-<header class="position-relative p-2" style="margin-top: 56px">
-    <h1 class="fs-3 ms-4 ">Dashboard</h1>
-</header>
- 
-    <nav class="navbar navbar-expand-sm position-relative z-3">
+    @section('header')
+        <h1 class="fs-3 ms-4 ">Dashboard</h1>
+    @endsection
+
+    @section('main')
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
             aria-label="Toggle navigation"></button>
@@ -78,3 +78,4 @@
             </section>
 
     </main>
+    @endsection

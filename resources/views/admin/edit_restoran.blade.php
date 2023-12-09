@@ -1,9 +1,9 @@
 @extends('layouts.partials.nav-sidebar-admin')
-<header class="position-relative p-2" style="margin-top: 56px">
-    <h1 class="fs-3 ms-4 ">Dashboard</h1>
-</header>
+    @section('header')
+        <h1 class="fs-3 ms-4 ">Dashboard</h1>
+    @endsection
 
-    <main class="position-relative p-2">
+    @section('main')
         <section class="m-4 border p-3">
             <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
             <div class="card-body">
@@ -38,3 +38,4 @@
             </div>
         </section>
     </main>
+@endsection

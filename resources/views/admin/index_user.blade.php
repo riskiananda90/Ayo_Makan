@@ -1,9 +1,9 @@
 @extends('layouts.partials.nav-sidebar-admin')
-<header class="position-relative p-2" style="margin-top: 56px">
-    <h1 class="fs-3 ms-4 ">Dashboard</h1>
-</header>
- 
-    <main class="position-relative p-2">
+    @section('header')
+        <h1 class="fs-3 ms-4 ">Dashboard</h1>
+    @endsection
+
+    @section('main')
         <section class="m-4 border p-3">
             <h5 class="fw-normal text-secondary ">Semua User Terdaftar</h5>
             <div class="d-flex justify-content-between align-items-center mt-4">
@@ -28,10 +28,11 @@
                 </form>
             </div>
             <div>
-                <table class="table border mt-3">
+                <div class="table-responsive">
+                    <table class="table table-bordered border mt-3">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
                             <th scope="col">Alamat</th>
@@ -68,6 +69,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
                 <div class="d-flex justify-content-between align-items-center ">
                     <p class="text-secondary m-0 ">Showing 1 to 10 of 10 entri</p>
                     <div class="d-flex align-items-center ">
@@ -89,3 +91,4 @@
             </div>
         </section>
     </main>
+@endsection
