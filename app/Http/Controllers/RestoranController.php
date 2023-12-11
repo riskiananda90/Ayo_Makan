@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class RestoranController extends Controller
 {
+    public function index() {
+        return view('restoran.index');
+    }
+
     public function create_restoran(){
         return view('admin/create_restoran');
     }

@@ -21,9 +21,9 @@ class User extends Authenticatable
         'nama',
         'email',
         'password',
-        // 'alamat',
-        // 'no_telp',
-        // 'role',
+        'alamat',
+        'no_telp',
+        'role',
     ];
 
     /**
@@ -64,5 +64,9 @@ class User extends Authenticatable
 
     public function ratings(){
         return $this->hasMany(Rating::class, 'id_user');
+    }
+
+    public function role(){
+        return $this->belongsTo(Role::class, 'Role_id');
     }
 }

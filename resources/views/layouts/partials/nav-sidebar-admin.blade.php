@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,8 +47,8 @@
                 </div>
                 <ul class="sub-menu navbar-nav">
                     <li><a href="#" class="link-head nav-link text-white">Users</a></li>
-                    <li><a href="{{route('index_user')}}" class="nav-link text-white">Semua Users</a></li>
-                    <li><a href="{{route('create_user')}}" class="nav-link text-white">Tambahkan Users</a></li>
+                    <li><a href="{{ route('index_user') }}" class="nav-link text-white">Semua Users</a></li>
+                    <li><a href="{{ route('create_user') }}" class="nav-link text-white">Tambahkan Users</a></li>
                 </ul>
             </li>
             <li class="item nav-item my-2 ">
@@ -60,8 +61,8 @@
                 </div>
                 <ul class="sub-menu navbar-nav">
                     <li><a href="#" class="link-head nav-link text-white">Toko</a></li>
-                    <li><a href="{{route('index_restoran')}}" class="nav-link text-white">Semua Toko</a></li>
-                    <li><a href="{{route('create_restoran')}}" class="nav-link text-white">Tambahkan Toko</a></li>
+                    <li><a href="{{ route('index_restoran') }}" class="nav-link text-white">Semua Toko</a></li>
+                    <li><a href="{{ route('create_restoran') }}" class="nav-link text-white">Tambahkan Toko</a></li>
                 </ul>
             </li>
             <li class="item nav-item my-2">
@@ -74,9 +75,9 @@
                 </div>
                 <ul class="sub-menu navbar-nav">
                     <li><a href="#" class="link-head nav-link text-white">Menu</a></li>
-                    <li><a href="{{route('index_menu')}}" class="nav-link text-white">Semua Menu</a></li>
-                    <li><a href="{{route('create_menu')}}" class="nav-link text-white">Tambahkan Menu</a></li>
-                    <li><a href="{{route('create_kategori')}}" class="nav-link text-white">Tambahkan Kategori</a></li>
+                    <li><a href="{{ route('index_menu') }}" class="nav-link text-white">Semua Menu</a></li>
+                    <li><a href="{{ route('create_menu') }}" class="nav-link text-white">Tambahkan Menu</a></li>
+                    <li><a href="{{ route('create_kategori') }}" class="nav-link text-white">Tambahkan Kategori</a></li>
                 </ul>
             </li>
             <li class="item nav-item my-2">
@@ -119,7 +120,12 @@
                 <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">
                     <li><a class="dropdown-item" href="#">Menu item</a></li>
                     <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <form action="/logout" method="post">
+                        <li>
+                        @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                        </li>
+                    </form>
                 </ul>
             </div>
         </div>
@@ -128,11 +134,11 @@
     <header class="position-relative p-2">
         @yield('header')
     </header>
-    
+
     <main class="position-relative p-2">
         @yield('main')
     </main>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>

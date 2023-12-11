@@ -108,8 +108,6 @@ class MenuController extends Controller
         return redirect()->route('show_menu', compact('restoran', 'kategori', 'menu'));
     }
 
-
-
     public function delete_menu(menu $menu)
     {
         $menu->delete();

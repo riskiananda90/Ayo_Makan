@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            // $table->string('alamat');
-            // $table->string('no_telp');
-            // $table->smallInteger('role')->default('user'); // 1 = admin, 2 = restoran, 3 = user
+            $table->string('alamat');
+            $table->string('no_telp');
+            $table->foreignId('role_id')->constrained('role','id')->onUpdate('cascade')->onDelete('cascade');; // 1 = admin, 2 = restoran, 3 = user
             $table->rememberToken();
             $table->timestamps();
         });
