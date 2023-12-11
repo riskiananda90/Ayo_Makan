@@ -18,8 +18,7 @@
                     <div class="input-box">
                         <label class="details">Nama Lengkap</label>
                         <input id="name" type="text" class="form-control @error('nama') is-invalid @enderror"
-                            name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus
-                            placeholder="Masukan Nama Lengkap">
+                            name="nama" value="{{ old('nama') }}" required autocomplete="nama" autofocus placeholder="Masukan Nama Lengkap">
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -31,8 +30,7 @@
                     <div class="input-box">
                         <label class="details">{{ __('Email') }}</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email"
-                            placeholder="Masukan Email">
+                            name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Masukan Email">
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -42,15 +40,13 @@
                     <div class="input-box">
                         <label class="details">{{ __('Alamat') }}</label>
                         <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror"
-                            name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat"
-                            placeholder="Masukan Email">
+                            name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" placeholder="Masukan Email">
 
                     </div>
                     <div class="input-box">
                         <label class="details">Nomor telepon</label>
                         <input id="no_telp" type="text" class="form-control @error('no_telp') is-invalid @enderror"
-                            name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp"
-                            placeholder="Masukan Nomor Telepon">
+                            name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" placeholder="Masukan Nomor Telepon">
                     </div>
                     <div class="input-box">
                         <label class="details">Password</label>
@@ -75,7 +71,7 @@
 
                 <div class="register-link">
                     <p>You have an account?
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="#">Login</a>
                     </p>
                 </div>
             </form>
