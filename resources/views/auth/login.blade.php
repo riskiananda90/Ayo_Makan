@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, 
     initial-scale=1.0">
     <title>Login Form in HTML and CSS</title>
-    <link rel="stylesheet" href="{{ asset('build/assets/css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
