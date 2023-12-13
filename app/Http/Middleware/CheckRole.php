@@ -4,9 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CheckRole
-{
+
     /**
      * Handle an incoming request.
      *
@@ -14,12 +14,21 @@ class CheckRole
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, ...$roles)
+
+class CheckRole
+{
+     public function handle($request, Closure $next, $role)
     {
-        if (auth()->check() && in_array(auth()->user()->role_id, $roles)) {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+
+        $user = Auth::user();
+
+        if ($user->role_id == $role) {
             return $next($request);
         }
 
-        return redirect('/redirect');
+        return redirect('/')->with('error', 'You do not have permission to access this page.');
     }
 }

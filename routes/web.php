@@ -7,7 +7,7 @@
     use Illuminate\Support\Facades\Route;
     use Illuminate\Support\Facades\Auth;
     use App\Http\Controllers\KategoriController;
-    use App\Http\Controllers\RedirectController;
+    // use App\Http\Controllers\RedirectController;
     use App\Http\Controllers\AuthController;
     use App\Http\Controllers\KeranjangController;
 
@@ -23,34 +23,16 @@
     */
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('index');
     });
 
     Auth::routes();
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    //  jika user belum login
-    Route::group(['middleware' => 'guest'], function () {
-        Route::get('/', function () {
-            return view('index');
-        })->name('index');
-        Route::get('/cart', function () {
-            return view('cart');
-        })->name('pemesanan');
-        Route::get('/login', [AuthController::class, 'login'])->name('login');
-        Route::post('/login', [AuthController::class, 'auth_login']);
-    });
-
-    // 
-    Route::group(['middleware' => ['auth', 'checkrole:1,2,3']], function () {
-        Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-        Route::get('/redirect', [RedirectController::class, 'cek'])->name('redirect');
-    });
 
     // untuk admin
-    Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
-        Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
+    Route::middleware(['checkRole:1'])->group(function(){
         // rute menu
         Route::get('/menu/create', [MenuController::class, 'create_menu'])->name('create_menu');
         Route::post('/menu/create', [MenuController::class, 'store_menu'])->name('store_menu');
@@ -77,7 +59,7 @@
         Route::get('/user/{user}/edit', [UserController::class, 'edit_user'])->name('edit_user');
         Route::patch('/user/{user}/update', [UserController::class, 'update_user'])->name('update_user');
         Route::delete('/user/{user}', [UserController::class, 'delete_user'])->name('delete_user');
-
+        
         // rute kategori
         Route::get('/kategori/create', [KategoriController::class, 'create_kategori'])->name('create_kategori');
         Route::post('/kategori/create', [KategoriController::class, 'store_kategori'])->name('store_kategori');
@@ -88,17 +70,44 @@
         Route::delete('/kategori/{kategori}', [KategoriController::class, 'delete_kategori'])->name('delete_kategori');
     });
 
-    //untuk restoran
-    Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
-        Route::get('/', [RestoranController::class, 'index']);
+    Route::middleware(['checkRole:2'])->group(function(){
+        Route::get('/', function () {
+            return view('index');
+        });
+        Route::get('/menu/create', [MenuController::class, 'create_menu'])->name('create_menu');
+        Route::post('/menu/create', [MenuController::class, 'store_menu'])->name('store_menu');
+        Route::get('/menu', [MenuController::class, 'index_menu'])->name('index_menu');
+        Route::get('/menu/{menu}', [MenuController::class, 'show_menu'])->name('show_menu');
+        Route::get('/menu/{menu}/edit', [MenuController::class, 'edit_menu'])->name('edit_menu');
+        Route::patch('/menu/{menu}/update', [MenuController::class, 'update_menu'])->name('update_menu');
+        Route::delete('/menu/{menu}', [MenuController::class, 'delete_menu'])->name('delete_menu');
+
+        Route::get('/kategori/create', [KategoriController::class, 'create_kategori'])->name('create_kategori');
+        Route::post('/kategori/create', [KategoriController::class, 'store_kategori'])->name('store_kategori');
+        Route::get('/kategori', [KategoriController::class, 'index_kategori'])->name('index_kategori');
+        Route::get('/kategori/{kategori}', [KategoriController::class, 'show_kategori'])->name('show_kategori');
+        Route::get('/kategori/{kategori}/edit', [KategoriController::class, 'edit_kategori'])->name('edit_kategori');
+        Route::patch('/kategori/{kategori}/update', [KategoriController::class, 'update_kategori'])->name('update_kategori');
+        Route::delete('/kategori/{kategori}', [KategoriController::class, 'delete_kategori'])->name('delete_kategori');
     });
 
-    // untuk user
-    Route::group(['middleware' => ['auth', 'checkrole:3']], function () {
-        Route::get('/index', [UserController::class, 'index']);
-        Route::get('/cart', [KeranjangController::class, 'index'])->name('index');
-        Route::post('/cart/add', [KeranjangController::class, 'addToKeranjang'])->name('add');
-        Route::delete('/cart/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('remove');
-        Route::patch('/keranjang/{id}/update', [KeranjangController::class, 'updateJumlahKeranjang'])->name('update');
+    Route::middleware(['checkRole:3'])->group(function(){
+        Route::get('/', function () {
+            return view('index');
+        });
+        Route::get('/menu/create', [MenuController::class, 'create_menu'])->name('create_menu');
+        Route::post('/menu/create', [MenuController::class, 'store_menu'])->name('store_menu');
+        Route::get('/menu', [MenuController::class, 'index_menu'])->name('index_menu');
+        Route::get('/menu/{menu}', [MenuController::class, 'show_menu'])->name('show_menu');
+        Route::get('/menu/{menu}/edit', [MenuController::class, 'edit_menu'])->name('edit_menu');
+        Route::patch('/menu/{menu}/update', [MenuController::class, 'update_menu'])->name('update_menu');
+        Route::delete('/menu/{menu}', [MenuController::class, 'delete_menu'])->name('delete_menu');
 
+        Route::get('/kategori/create', [KategoriController::class, 'create_kategori'])->name('create_kategori');
+        Route::post('/kategori/create', [KategoriController::class, 'store_kategori'])->name('store_kategori');
+        Route::get('/kategori', [KategoriController::class, 'index_kategori'])->name('index_kategori');
+        Route::get('/kategori/{kategori}', [KategoriController::class, 'show_kategori'])->name('show_kategori');
+        Route::get('/kategori/{kategori}/edit', [KategoriController::class, 'edit_kategori'])->name('edit_kategori');
+        Route::patch('/kategori/{kategori}/update', [KategoriController::class, 'update_kategori'])->name('update_kategori');
+        Route::delete('/kategori/{kategori}', [KategoriController::class, 'delete_kategori'])->name('delete_kategori');
     });

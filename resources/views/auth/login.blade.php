@@ -13,7 +13,8 @@
 
 <body>
     <div class="wrapper">
-        <form action="{{ route('login') }}">
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <h1> {{ __('Login') }} </h1>
             <div class="input-box">
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
