@@ -7,9 +7,8 @@
     use Illuminate\Support\Facades\Route;
     use Illuminate\Support\Facades\Auth;
     use App\Http\Controllers\KategoriController;
-    // use App\Http\Controllers\RedirectController;
-    use App\Http\Controllers\AuthController;
     use App\Http\Controllers\KeranjangController;
+    use Illuminate\Support\Facades\Redirect;
 
     /*
     |--------------------------------------------------------------------------
@@ -23,17 +22,18 @@
     */
 
     Route::get('/', function () {
-        return view('index');
+        return redirect::route('index');
     });
 
     Auth::routes();
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
     // untuk admin
     Route::middleware(['checkRole:1'])->group(function(){
         // rute menu
+        Route::get('/', function () {
+            return view('index');
+        });
+        
         Route::get('/menu/create', [MenuController::class, 'create_menu'])->name('create_menu');
         Route::post('/menu/create', [MenuController::class, 'store_menu'])->name('store_menu');
         Route::get('/menu', [MenuController::class, 'index_menu'])->name('index_menu');
