@@ -1,9 +1,9 @@
 @extends('layouts.partials.nav-sidebar-admin')
-    @section('header')
-        <h1 class="fs-3 ms-4 ">Dashboard</h1>
-    @endsection
+@section('header')
+    <h1 class="fs-3 ms-4 ">Dashboard</h1>
+@endsection
 
-    @section('main')
+@section('main')
     <section class="m-4 border p-3">
         <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
         <div class="d-flex justify-content-between align-items-center mt-4">
@@ -51,7 +51,8 @@
                                 <td> {{ $menu->deskripsi }} </td>
                                 <td> {{ $menu->kategori->nama_kategori }} </td>
                                 <td> {{ $menu->restoran->nama_restoran }} </td>
-                                <td> <img src="{{ url('storage/' . $menu->image) }}" alt="" class="img-fluid">
+                                <td> <img src="{{ url('storage/' . $menu->image) }}" alt="{{ $menu->nama_menu }}"
+                                        class="img-fluid">
                                 </td>
                                 <td>
                                     <form action="{{ route('edit_menu', $menu) }}" method="get">
@@ -92,5 +93,4 @@
             </div>
         </div>
     </section>
-</main>
 @endsection

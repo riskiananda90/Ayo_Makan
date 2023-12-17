@@ -8,23 +8,23 @@
 }
 
 body {
-    margin: 0; /* Mengatur margin body ke 0 */
-    padding-bottom: 70px;
+    margin: 0;
+    /* Mengatur margin body ke 0 */
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-ul li{
+ul li {
     padding: 0px 15px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-nav{
+nav {
     background-color: #fff;
     position: absolute;
     transition: box-shadow 0, 5s;
@@ -34,7 +34,8 @@ nav{
 
 /* Tambahkan shadow ke navbar */
 .navbar-scrolled {
-  box-shadow: none; /* Hilangkan shadow */
+    box-shadow: none;
+    /* Hilangkan shadow */
 }
 
 
@@ -45,20 +46,51 @@ section.main::before {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url("/image/makanan1.jpeg");
-    filter: brightness(90%);
-    background-repeat: no-repeat; /* Menyatakan bahwa gambar latar tidak boleh diulang */
-    background-size: cover; /* Mengisi seluruh elemen .cc dengan gambar */
+    background-image: url("image/pexels-ella-olsson-1640777.jpg");
+    filter: brightness(80%);
+    background-repeat: no-repeat;
+    /* Menyatakan bahwa gambar latar tidak boleh diulang */
+    background-size: cover;
+    /* Mengisi seluruh elemen .cc dengan gambar */
     background-position: center;
     z-index: -1;
-  }
+}
 
-section.main{
+section.main {
     position: relative;
-    text-align: center; /* Pusatkan teks */
-    height: 92vh;   
-    }
+    text-align: center;
+    /* Pusatkan teks */
+    height: 92vh;
+}
 
-footer i{
+footer i {
     color: white;
+}
+
+.modal-content {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+} */
+
+.list-produk .card,
+.col .card {
+    transition: transform 0.2s;
+}
+
+.list-produk .card:hover,
+.col .card:hover {
+    transform: scale(1.05);
+}
+
+#moreBtn {
+    cursor: pointer;
+}
+
+.list-produk .col {
+    margin-bottom: 15px;
 }

@@ -20,7 +20,7 @@ class pesanan extends Model
     protected $with = ['users','restoran'];
 
     public function users(){
-        return $this->belongsTo(users::class, 'id_user');
+        return $this->belongsTo(user::class, 'id_user');
     }
 
     public function restoran(){

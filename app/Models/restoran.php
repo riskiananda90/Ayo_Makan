@@ -23,14 +23,14 @@ class restoran extends Model
    ];
 
    public function menu(){
-        return $this->hasMany(Menu::class, 'id_restoran');
+        return $this->hasMany(Menu::class, 'id_restoran', 'id');
     }
 
     public function pesanan(){
-        return $this->hasMany(Pesanan::class, 'id_restoran');
+        return $this->hasMany(Pesanan::class, 'id_restoran', 'id');
     }
 
     public function ratings(){
-        return $this->hasMany(Rating::class, 'id_restoran');
+        return $this->hasMany(Rating::class, 'id_restoran', 'id');
     }
 }

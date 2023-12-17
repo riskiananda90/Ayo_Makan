@@ -39,7 +39,7 @@ nav {
 }
 
 /* main */
-main{
+main {
     margin-left: 80px;
 }
 
@@ -102,4 +102,27 @@ aside div p {
 
 aside div.container div p {
     font-size: 14px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:not(:last-child) {
+    margin-right: 15px;
+}
+
+.more-btn-container {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.more-btn {
+    transition: opacity 0.3s ease-in-out;
 }

@@ -24,7 +24,7 @@
     </section>
 
     <section class="m-4 border p-3">
-        <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+        <h5 class="fw-normal text-secondary ">Semua Kategori Terdaftar</h5>
         <div class="d-flex justify-content-between align-items-center mt-4">
             <div class="d-flex align-items-center">
                 <p class="text-secondary m-0 me-2">Show</p>
@@ -53,6 +53,8 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nama Kategori</th>
+                            <th scope="col">Action</th>
+
                         </tr>
                     </thead>
                     <tbody>
