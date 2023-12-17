@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    /* Mengatur margin body ke 0 */
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 0px 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    background-color: #fff;
+    position: absolute;
+    transition: box-shadow 0, 5s;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Tambahkan shadow ke navbar */
+.navbar-scrolled {
+    box-shadow: none;
+    /* Hilangkan shadow */
+}
+
+
+section.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("image/pexels-ella-olsson-1640777.jpg");
+    filter: brightness(80%);
+    background-repeat: no-repeat;
+    /* Menyatakan bahwa gambar latar tidak boleh diulang */
+    background-size: cover;
+    /* Mengisi seluruh elemen .cc dengan gambar */
+    background-position: center;
+    z-index: -1;
+}
+
+section.main {
+    position: relative;
+    text-align: center;
+    /* Pusatkan teks */
+    height: 92vh;
+}
+
+footer i {
+    color: white;
+}
+
+.modal-content {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+} */
+
+.list-produk .card,
+.col .card {
+    transition: transform 0.2s;
+}
+
+.list-produk .card:hover,
+.col .card:hover {
+    transform: scale(1.05);
+}
+
+#moreBtn {
+    cursor: pointer;
+}
+
+.list-produk .col {
+    margin-bottom: 15px;
+}

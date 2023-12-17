@@ -21,9 +21,9 @@ class User extends Authenticatable
         'nama',
         'email',
         'password',
-        // 'alamat',
-        // 'no_telp',
-        // 'role',
+        'alamat',
+        'no_telp',
+        'role',
     ];
 
     /**
@@ -45,24 +45,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function getRole(){
-    //     switch($this->role['role']){
-    //         case 1:
-    //             return 'admin';
-    //         case 2:
-    //             return 'restoran';
-    //         case 3:
-    //             return 'user';
-    //         default:
-    //             return false;
-    //     }
-    // }
-
     public function pesanan(){
         return $this->hasMany(Pesanan::class, 'id_user');
     }
 
     public function ratings(){
         return $this->hasMany(Rating::class, 'id_user');
+    }
+
+    public function role(){
+        return $this->belongsTo(Role::class, 'Role_id');
+    }
+
+    public function keranjang(){
+        return $this->hasMany(keranjang::class, 'id_keranjang');
     }
 }
