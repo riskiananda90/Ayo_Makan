@@ -34,7 +34,7 @@
                 </div>
                 <ul class="sub-menu navbar-nav">
                     <li><a href="#" class="link-head nav-link text-white">Dashboard</a></li>
-                    <li><a href="#" class="nav-link text-white">Halaman Utama</a></li>
+                    <li><a href="{{route('admin.dashboard')}}" class="nav-link text-white">Halaman Utama</a></li>
                 </ul>
             </li>
             <li class="item nav-item my-2">
@@ -118,8 +118,7 @@
                     <i class="fa-regular fa-circle-user btn-outline-danger"></i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">
-                    <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item" href="{{url('/')}}">Home</a></li>
                     <form action="/logout" method="post">
                         <li>
                         @csrf

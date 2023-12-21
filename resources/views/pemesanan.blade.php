@@ -13,14 +13,15 @@
                 <div class="d-flex me-5 mt-5">
                     <div class="flex-grow-1">
                         <h2 class="fw-bolder">
-                            Nasi Lemak KFC
+                            {{ $menuTerpilih->nama_menu }}
                         </h2>
                         <div class="d-flex align-items-center mt-3">
                             <div class="rekomendasi d-flex align-items-center text-bg-danger rounded-pill">
                                 <i class="fa fa-thumbs-up" aria-hidden="true" style="height: 20px;"></i>
                                 <p class="m-0 ms-3">Rekomendasi</p>
                             </div>
-                            <p class="m-0 ms-3 fs-6 fw-medium">Nasi lemak</p>
+                            <p class="m-0 ms-3 fs-6 fw-medium">{{ $kategori->nama_kategori }}</p>
+                            <p class="m-0 ms-3 fs-6 fw-medium">Rp {{ $menuTerpilih->harga_menu }}</p>
                         </div>
                         <div class="open d-flex align-items-center bg-opacity-75 rounded-pill mt-3">
                             <i class="fa fa-circle icon" aria-hidden="true"></i>
@@ -28,7 +29,8 @@
                         </div>
                     </div>
                     <div class="w-50">
-                        <img src="Image/KFC Nasi Lemak KFC.jpeg" alt="" class="img-thumbnail rounded-5 ">
+                        <img src="{{ url('storage/' . $menuTerpilih->image) }}" alt="{{ $menuTerpilih->nama_menu }}"
+                            class="img-thumbnail rounded-5">
                     </div>
                 </div>
 
@@ -83,32 +85,31 @@
                             <p class="m-0 fw-lighter text-body-tertiary mt-2 ">Value for money</p>
                         </li>
                     </ul>
+                    <div class="d-flex justify-content-center ">
+                        <a class="btn btn-danger me-2" href="#">menu</a>
+                        <a class="btn btn-outline-danger ms-2" href="#" tabindex="-1" aria-disabled="true">Review</a>
+                    </div>
+
+                    <section class="mt-5 me-5">
+                        @foreach ($menu as $kategoriId => $menuItems)
+                            @php
+                                $kategori = App\Models\Kategori::find($kategoriId);
+                                $menuItems = $menuItems->take(3); // Ambil 3 menu pertama
+                            @endphp
+
+                            <h1 class="fs-2 fw-bold mt-3">{{ $kategori->nama_kategori }}</h1>
+                            <div class="row my-4" id="kategori_{{ $kategoriId }}">
+                                @include('layouts.partials.menu', ['menu' => $menuItems])
+                            </div>
+                            <div class="text-center">
+                                @if ($menuItems->count() >= 3)
+                                    <button class="more-btn btn btn-outline-danger" data-id-restoran="{{ $restoran->id }}"
+                                        data-id-kategori="{{ $kategori->id }}">More</button>
+                                @endif
+                            </div>
+                        @endforeach
+                    </section>
                 </div>
-
-                <div class="d-flex justify-content-center ">
-                    <a class="btn btn-danger me-2" href="#">menu</a>
-                    <a class="btn btn-outline-danger ms-2" href="#" tabindex="-1" aria-disabled="true">Review</a>
-                </div>
-
-                <section class="mt-5 me-5">
-                    @foreach ($menu as $kategoriId => $menuItems)
-                        @php
-                            $kategori = App\Models\Kategori::find($kategoriId);
-                            $menuItems = $menuItems->take(3); // Ambil 3 menu pertama
-                        @endphp
-
-                        <h1 class="fs-2 fw-bold mt-3">{{ $kategori->nama_kategori }}</h1>
-                        <div class="row my-4" id="kategori_{{ $kategoriId }}">
-                            @include('layouts.partials.menu', ['menu' => $menuItems])
-                        </div>
-                        <div class="text-center">
-                            @if ($menuItems->count() >= 3)
-                                <button class="more-btn btn btn-outline-danger" data-id-restoran="{{ $restoran->id }}"
-                                    data-id-kategori="{{ $kategori->id }}">More</button>
-                            @endif
-                        </div>
-                    @endforeach
-                </section>
             </div>
 
             <aside class="col-md-3 bg-white position-fixed">
@@ -132,13 +133,13 @@
                         <p>Total Harga</p>
                         <p>Rp {{ number_format($totalHarga) }}</p>
                     </div>
-                    <form action="{{ route('proses.pembayaran') }}" method="post">
-                        @csrf
-                        <button class="btn btn-danger w-100" type="submit">Bayar</button>
+                    {{-- <form action="{{ route('proses.pembayaran') }}" method="post"> --}}
+                    @csrf
+                    {{-- <button class="btn btn-danger w-100" type="submit">Bayar</button> --}}
+                    <a class="btn btn-danger w-100" type="submit" href="{{route('pembayaran')}}">Bayar</a>
                     </form>
                 </div>
             </aside>
-
         </div>
     </main>
 

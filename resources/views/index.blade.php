@@ -6,7 +6,12 @@
             <h1 class="display-1 text-white fw-bold" style="font-size: 52px;">Lorem ipsum<br>dolor sit amet.</h1>
         </div>
         <div class="row align-self-center my-5">
-            <a href="#beli" class="btn btn-danger fs-5 fw-bold rounded-pill" style="width: 100px;">Beli</a>
+            @php
+                $kategoriIds = App\Models\Kategori::pluck('id')->toArray(); // Mengambil semua ID kategori dari database
+                $randomId = $kategoriIds[array_rand($kategoriIds)]; // Memilih secara acak dari array ID kategori
+            @endphp
+            <a href="{{ route('makanan', ['id' => $randomId]) }}" class="btn btn-danger fs-5 fw-bold rounded-pill"
+                style="width: 100px;">Beli</a>
         </div>
     </section>
 
@@ -96,7 +101,7 @@
             <form action="" class="container-fluid d-flex justify-content-center align-items-center">
                 <input type="email" class="form-control w-75 h-25 p-3 m-3" id="exampleFormControlInput1"
                     placeholder="name@example.com">
-                <input type="submit" id="submit" class="btn btn-danger  p-3" value="Lorem" style="border-0"/>
+                <input type="submit" id="submit" class="btn btn-danger  p-3" value="Lorem" style="border-0" />
             </form>
         </div>
     </section>
@@ -107,7 +112,7 @@
     <script>
         $(document).ready(function() {
             // Menyembunyikan semua item kecuali 3 pertama
-            var visibleItems = 3;
+            var visibleItems = 4;
             var $items = $('.list-produk .col-12');
 
             $items.slice(visibleItems).hide();

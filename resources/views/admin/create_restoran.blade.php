@@ -5,7 +5,7 @@
 
     @section('main')
         <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+            <h5 class="fw-normal text-secondary ">Membuat Restoran</h5>
             <div class="card-body">
                 <form action='{{route('store_restoran')}}' method='post' enctype="multipart/form-data">
                     @csrf

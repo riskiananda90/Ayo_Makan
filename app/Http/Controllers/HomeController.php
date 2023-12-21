@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\kategori;
 use App\Models\menu;
 use App\Models\restoran;
+use App\Models\keranjang;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
@@ -58,26 +59,72 @@ class HomeController extends Controller
         return asset('assets/image/' . ($gambarMapping[$kategoriNama] ?? 'default_image.jpg'));
     }
 
-    public function menu_pemesanan()
+    public function produk($id)
     {
-        $kategori = Kategori::all();
-        $menu = Menu::all();
+        // Ambil data restoran berdasarkan $id (bisa saja $id adalah ID kategori)
+        $restoran = Restoran::find($id);
 
-        return view('menu.index', compact('kategori', 'menu'));
+        // Ambil kategori-kategori terkait dengan restoran atau kategori utama
+        $kategori = Kategori::find($id);
+
+        // Ambil menu-menu terkait dengan restoran atau kategori
+        $menu = Menu::inRandomOrder()->get()->groupBy('id_kategori');
+
+        return view('produk', [
+            'restoran' => $restoran,
+            'kategori' => $kategori,
+            'menu' => $menu,
+        ]);
     }
 
-    public function showPemesanan($id)
+    public function showMenuDetail(Request $request, $id_menu)
     {
-        // Ambil data restoran dan kategori berdasarkan $id
+        $nama_menu = $request->get('nama_menu');
+        $gambar_menu = $request->get('gambar_menu');
+
+        return view('pemesanan', [
+            'nama_menu' => $nama_menu,
+            'gambar_menu' => $gambar_menu,
+        ]);
+    }
+
+
+    public function showPemesanan($id, $id_menu)
+    {
+        // Ambil data restoran berdasarkan $id
         $restoran = Restoran::find($id);
-        $kategori = kategori::find($id);
+
+        // Ambil kategori-kategori terkait dengan restoran
+        $kategori = Kategori::find($id);
+
+        // Ambil informasi menu berdasarkan $id_menu
+        $menuTerpilih = Menu::find($id_menu);
 
         // Ambil menu-menu terkait dengan restoran dan kelompokkannya berdasarkan kategori
-        $menu = Menu::where('id_restoran', $id)->get()->groupBy('id_kategori');
+        $menu = Menu::where('id_restoran', $id)
+            ->where('id_kategori', $kategori->id)
+            ->get()
+            ->groupBy('id_kategori');
+
+
+        // Ambil data keranjang berdasarkan user yang sedang login
+        $keranjang = Keranjang::where('id_user', auth()->id())->get();
+
+        // Hitung total harga dari data keranjang
+        $totalHarga = $keranjang->sum('total_harga');
 
         // Kirim data ke view pemesanan.blade.php
-        return view('pemesanan', ['restoran' => $restoran, 'menu' => $menu, 'kategori' => $kategori]);
+        return view('pemesanan', [
+            'restoran' => $restoran,
+            'menu' => $menu,
+            'kategori' => $kategori,
+            'menuTerpilih' => $menuTerpilih,
+            'keranjang' => $keranjang,
+            'totalHarga' => $totalHarga,
+        ]);
     }
+
+
 
     public function getMoreMenu($idRestoran, $idKategori, $jumlahMenuTampil)
     {
