@@ -32,7 +32,12 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mb-2 mb-lg-0 align-items-center justify-content-between w-100 ">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Rekomendasi</a>
+                        @php
+                            $kategoriId = App\Models\Kategori::pluck('id')->toArray(); // Mengambil semua ID kategori dari database
+                            $randomId = $kategoriId[array_rand($kategoriId)]; // Memilih secara acak dari array ID kategori
+                        @endphp
+                        <a class="nav-link text-dark"
+                            href="{{ route('makanan', ['id' => $randomId]) }} ">Rekomendasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">FAQ</a>
@@ -72,8 +77,10 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end"
                                 aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Menu item 1</a></li>
-                                <li><a class="dropdown-item" href="#">Menu item 2</a></li>
+                                @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
+                                    <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                                    </li>
+                                @endif
                                 <li>
                                     <form action="{{ route('logout') }}" method="post">
                                         @csrf
@@ -142,7 +149,8 @@
                         <p class="fs-5 fw-bold">Total Harga</p>
                         <p class="fs-5 fw-bold" id="total-harga">Rp.{{ number_format($totalHarga) }}</p>
                     </div>
-                    <button type="button" class="btn btn-danger w-100">Pesan</button>
+                    {{-- <button type="button" class="btn btn-danger w-100">Pesan</button> --}}
+                    <a type="button" class="btn btn-danger w-100" href="{{route('pembayaran')}}">Pesan</a>
                 </div>
             </div>
         </div>

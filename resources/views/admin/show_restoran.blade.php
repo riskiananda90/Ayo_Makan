@@ -5,7 +5,7 @@
 
     @section('main')
         <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+            <h5 class="fw-normal text-secondary ">Restoran</h5>
             <div class="card-body">
                 <div class="form-body">
                     <hr>

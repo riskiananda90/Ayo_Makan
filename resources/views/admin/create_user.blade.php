@@ -5,7 +5,7 @@
 
     @section('main')
         <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+            <h5 class="fw-normal text-secondary ">Membuat User</h5>
             <div class="card-body">
                 <form action='{{ route('store_user') }}' method='post' enctype="multipart/form-data">
                     @csrf
@@ -13,16 +13,16 @@
                         <hr>
                         <div class="form-group mt-3">
                             <label class="control-label">Nama</label>
-                            <input type="text" name="nama" class="form-control" placeholder="Ahmed Jawir">
+                            <input type="text" name="nama" class="form-control" placeholder="Ahmad">
                         </div>
                         <div class="form-group mt-3">
                             <label class="control-label">Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Jawir@gmail.com">
+                            <input type="text" name="email" class="form-control" placeholder="Ahmad@gmail.com">
                         </div>
                         <div class="form-group mt-3">
                             <label class="control-label">Alamat</label>
                             <input type="text" name="alamat" class="form-control"
-                                placeholder="Rumah Makan Jawir">
+                                placeholder="jalan kampung asia">
                         </div>
                         <div class="form-group mt-3">
                             <label class="control-label">Nomor Telepon</label>

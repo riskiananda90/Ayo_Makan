@@ -5,7 +5,7 @@
 
     @section('main')
         <section class="m-4 border p-3">
-            <h5 class="fw-normal text-secondary ">Semua Menu Terdaftar</h5>
+            <h5 class="fw-normal text-secondary ">Edit Menu</h5>
             <div class="card-body">
                 <form action='{{ route('update_menu', $menu) }}' method='post' enctype="multipart/form-data">
                     @method('PATCH')
