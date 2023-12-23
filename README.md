@@ -9,7 +9,7 @@ Versi <code>PHP >= 8.2.12</code>
 
 Versi <code>Composer >= 2.6.5</code>
 
-Versi Database MySQL
+Versi Database <code>MySQL</code>
 
 <h1>Langkah setup projek</h1>
 1. Clone repository dan <code>cd</code> kedalam folde yang ingin di setup
