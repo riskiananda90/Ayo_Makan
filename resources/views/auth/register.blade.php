@@ -13,6 +13,7 @@
     <div class="container">
         <div class="wrapper">
             <form action="{{ route('register') }}" method="POST">
+                @csrf
                 <h1>Sign Up</h1>
                 <div class="user-details">
                     <div class="input-box">
