@@ -6,7 +6,9 @@ Composer
 https://getcomposer.org/download/
 
 Versi PHP >= 8.2.12
+
 Versi Composer >= 2.6.5
+
 Versi Database MySQL
 
 <h1>Langkah setup projek</h1>
@@ -41,9 +43,13 @@ DB_PASSWORD=</pre>
 
 <h2>List User</h2>
 Admin
+
 Email:<code>admin@admin.com</code>
+
 password:<code>password</code>
 
 Admin
+
 Email:<code>user@user.com</code>
+
 password:<code>password</code>
