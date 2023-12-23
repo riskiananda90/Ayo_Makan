@@ -5,9 +5,9 @@ https://www.apachefriends.org/download.html
 Composer
 https://getcomposer.org/download/
 
-Versi PHP >= 8.2.12
+Versi <code>PHP >= 8.2.12</code>
 
-Versi Composer >= 2.6.5
+Versi <code>Composer >= 2.6.5</code>
 
 Versi Database MySQL
 
