@@ -16,9 +16,10 @@ Versi Database MySQL
 2. Install composer pada projek
 <pre> composer install</pre>
 
-3. Copy file <code>.env.example</code> dan ubah file menjadi <code>env</code>
+3. Copy file <code>.env.example</code> dan ubah file menjadi <code>.env</code>
 
 4. generate key app baru
 <pre> php artisan key:generate </pre>
 
-5. 
+5. Ubah Configurasi <code>.env</code> menjadi
+
