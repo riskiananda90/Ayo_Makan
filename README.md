@@ -13,7 +13,7 @@ Versi Database MySQL
 
 <h1>Langkah setup projek</h1>
 1. Clone repository dan <code>cd</code> kedalam folde yang ingin di setup
-<pre>git clone git@github.com:riskiananda90/Ayo_Makan.git</pre>
+<pre>git clone https://github.com/riskiananda90/Ayo_Makan.git</pre>
 
 2. Install composer pada projek
 <pre> composer install</pre>
