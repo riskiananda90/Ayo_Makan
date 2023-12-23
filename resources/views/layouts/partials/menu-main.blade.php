@@ -4,7 +4,7 @@
             <form class="add-to-cart-form" data-menu-id="{{ $makanan->id }}" data-harga-menu="{{ $makanan->harga_menu }}">
                 @csrf
                 <div class="card-body p-0">
-                    <img src="{{ url('storage/' . $makanan->image) }}" alt="{{ $makanan->nama_menu }}" class="img-fluid">
+                    <img src="{{ asset('storage/' . $makanan->image) }}" alt="{{ $makanan->nama_menu }}" class="img-fluid" width="300" height="200">
                     <h5 class="card-text fs-6 fw-bold m-2">{{ $makanan->nama_menu }}</h5>
                     <p class="card-text fs-6 fw-semibold m-2">{{ $makanan->harga_menu }}</p>
                     <div class="d-flex justify-content-center my-3">

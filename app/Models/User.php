@@ -23,7 +23,7 @@ class User extends Authenticatable
         'password',
         'alamat',
         'no_telp',
-        'role',
+        'role_id',
     ];
 
     /**
@@ -54,7 +54,7 @@ class User extends Authenticatable
     }
 
     public function role(){
-        return $this->belongsTo(Role::class, 'Role_id');
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
     public function keranjang(){
